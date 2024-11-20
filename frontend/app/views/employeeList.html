@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="employeeApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des employés</title>
+</head>
+<body ng-controller="employeeListController">
+    <h1>Liste des employés</h1>
+
+    <div ng-if="errorMessage" style="color: red;">
+        {{ errorMessage }}
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Poste</th>
+                <th>Département</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="employee in employees">
+                <td>{{ employee.first_name }} {{ employee.last_name }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.position }}</td>
+                <td>{{ employee.department }}</td>
+                <td>
+                    <a href="#/edit/{{ employee.id }}">Modifier</a>
+                    <button ng-click="deleteEmployee(employee.id)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="#/add">Ajouter un employé</a>
+</body>
+</html>

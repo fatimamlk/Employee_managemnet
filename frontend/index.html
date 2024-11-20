@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="employeeApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="libs/angular.min.js"></script>
+  <script src="libs/angular-route.min.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/controllers/employeeListController.js"></script>
+  <script src="app/controllers/addEmployeeController.js"></script>
+  <script src="app/controllers/editEmployeeController.js"></script>
+  <script src="app/services/employeeService.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="#!/">Employee List</a>
+    <a href="#!/add">Add Employee</a>
+  </nav>
+  <div ng-view></div>
+</body>
+</html>
